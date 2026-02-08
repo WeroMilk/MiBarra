@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --apple-bg: #F5F5F7;
+  --apple-surface: #FFFFFF;
+  --apple-text: #1D1D1F;
+  --apple-accent: #007AFF;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  /* Altura estable en móvil (evita salto con barra de direcciones) */
+  min-height: 100vh;
+  min-height: 100dvh;
+  height: 100%;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #F5F5F7;
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100vw;
+  height: 100%;
+}
+
+/* Pantalla del bar: una sola vista tipo app, sin scroll */
+.app-bar-view {
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+#__next {
+  min-height: 100vh;
+  width: 100vw;
+}
+
+body {
+  color: #1D1D1F;
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-poppins), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 600;
+}
+
+/* Scrollbar personalizado estilo Apple */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F5F5F7;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D2D2D7;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #86868B;
+}
+
+/* Prevenir zoom en iOS */
+input,
+select,
+textarea {
+  font-size: 16px !important;
+}
+
+/* Ocultar scrollbar pero mantener funcionalidad */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Utilidades adicionales */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
